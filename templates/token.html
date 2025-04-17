@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Token</title>
+</head>
+<body>
+  <h3>Your Token: {{.token}}</h3>
+
+  <form action="/dashboard" method="GET">
+    <input type="hidden" name="token" value="{{.token}}">
+    <button type="submit">Go to Dashboard</button>
+  </form>
+</body>
+</html>

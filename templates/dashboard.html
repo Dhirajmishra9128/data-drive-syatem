@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>Dashboard</title><link rel="stylesheet" href="/static/style.css"></head>
+<body>
+  <h1>Dashboard</h1>
+  <h3>Create File/Folder</h3>
+  <form action="/drive/create" method="POST">
+    <input name="name" placeholder="Name" required>
+    <select name="type">
+      <option value="file">File</option>
+      <option value="folder">Folder</option>
+    </select>
+    <input name="parent_id" placeholder="Parent ID (optional)">
+    <button type="submit">Create</button>
+  </form>
+  <h3>Your Files/Folders</h3>
+  <ul>
+    {{range .files}}
+      <li>{{.Name}} ({{.Type}})
+        <form action="/drive/update/{{.ID}}" method="POST" style="display:inline">
+          <input name="name" placeholder="New name" required>
+          <button type="submit">Rename</button>
+        </form>
+        <form action="/drive/delete/{{.ID}}" method="POST" style="display:inline">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    {{end}}
+  </ul>
+</body>
+</html>
