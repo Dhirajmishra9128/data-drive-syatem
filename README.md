@@ -62,7 +62,7 @@ CREATE DATABASE datadrive;
 
 ### 3. Clone / Copy the Project
 ```bash
-git clone <this-project>  
+git clone https://github.com/Dhirajmishra9128/data-drive-syatem.git  
 cd data-drive-system
 go mod init data-drive-system
 go get ./...
